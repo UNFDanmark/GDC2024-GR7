@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Animations;
@@ -10,12 +11,11 @@ public class RolledOver : MonoBehaviour
     public Transform reset;
     public BoxCollider rolledOver;
     public bool isflipped = false;
-    public float timer = 2f;
+    public float timer = 5f;
     public float flip =  2f; 
     public float timerLeft;
-    public BoxCollider rolledLeft;
-
-    public BoxCollider rolledRight;
+    public Transform carRotate;
+    public Rigidbody carRb;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,26 +27,38 @@ public class RolledOver : MonoBehaviour
     void Update()
     {
         
-        if (isflipped == true)
-        {
-            timerLeft = timerLeft - Time.deltaTime;
-        }
-        if (timerLeft <= 0)
-        {
-            reset.position = new Vector3(transform.position.x, transform.position.y + flip, transform.position.z);
-            reset.Rotate(180,0,0);
-            Debug.Log("no time left");
-            timerLeft = timer;
+        
+        
+            //reset.position = new Vector3(transform.position.x, transform.position.y + flip, transform.position.z);
+            //reset.Rotate(180,0,0);
+            //Debug.Log("no time left");
+            
             isflipped = false;
 
-        }
 
-
-        if (Vector3.Dot(Vector3.up, transform.up) < 1)
+        if (Vector3.Dot(Vector3.up, carRotate.up) < 0.5)
         {
-           float vinkel = Mathf.Acos(Vector3.Dot(Vector3.up, transform.up) / (Vector3.up.magnitude * transform.up.magnitude));
-           print(vinkel * Mathf.Rad2Deg);
+            timerLeft = timerLeft - Time.deltaTime;
+            print(timerLeft);
+            if (timerLeft <= 0)
+            {
+                float vinkel = Mathf.Acos(Vector3.Dot(Vector3.up, carRotate.up));
+                //print(vinkel * Mathf.Rad2Deg);
+                //reset.position = new Vector3(transform.position.x, transform.position.y + flip, transform.position.z);
+                Quaternion targetRotation = Quaternion.FromToRotation(carRotate.up, Vector3.up) * carRotate.rotation; 
+                carRotate.rotation = Quaternion.Slerp(carRotate.rotation, targetRotation, Time.deltaTime * 1000f);
+                print("tried to rotate");
+                timerLeft = timer;
+                print("reset timer");
+            }
+           
+            
         }
+        else
+        {
+            timerLeft = timer;
+        }
+            
 
 
     }
