@@ -21,7 +21,7 @@ public class CarController : MonoBehaviour
         public Axel axel; 
     }
 
-    public GameObject groundedBox;
+   
     
     public float jumpSTR = 100000f;
     

@@ -10,7 +10,7 @@ public class RolledOver : MonoBehaviour
     public BoxCollider rolledOver;
     public bool isflipped = false;
     public float timer = 2f;
-    public Vector3 flip = new Vector3(0, 2, 0); 
+    public float flip =  2f; 
     public float timerLeft;
     // Start is called before the first frame update
     void Start()
@@ -22,17 +22,18 @@ public class RolledOver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (isflipped == true)
         {
             timerLeft = timerLeft - Time.deltaTime;
         }
         if (timerLeft <= 0)
         {
-            transform.position = flip;
+            reset.position = new Vector3(transform.position.x, transform.position.y + flip, transform.position.z);
             reset.Rotate(0,0,180);
-            transform.position = flip;
             Debug.Log("no time left");
             timerLeft = timer;
+            isflipped = false;
 
         }
 
@@ -49,7 +50,7 @@ public class RolledOver : MonoBehaviour
             timerLeft = timer;
         }
     }
-    private void OnTriggerEnter(Collider other)
+     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Floor"))
         {

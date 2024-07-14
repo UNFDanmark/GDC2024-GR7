@@ -243,7 +243,7 @@ Transform:
   m_GameObject: {fileID: 93321983}
   serializedVersion: 2
   m_LocalRotation: {x: -0.340816, y: -0.031980727, z: -0.002061318, w: -0.9395837}
-  m_LocalPosition: {x: 1.4280009, y: 10.48, z: -17.76}
+  m_LocalPosition: {x: 3, y: 38.5, z: 90.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -276,11 +276,11 @@ Transform:
   m_GameObject: {fileID: 244887442}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.47, y: 2.277, z: -8.888}
+  m_LocalPosition: {x: 0.058610972, y: 1.75, z: 0.26999474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5556975235256989439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &244887444
 BoxCollider:
@@ -319,7 +319,7 @@ MonoBehaviour:
   rolledOver: {fileID: 244887444}
   isflipped: 0
   timer: 2
-  flip: {x: 0, y: 2, z: 0}
+  flip: 2
   timerLeft: 0
 --- !u!1 &281895435
 GameObject:
@@ -518,7 +518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e085d4d90b8a5fd4d8529ba5d8a95610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundedBox: {fileID: 0}
   jumpSTR: 10
   maxAcceleration: 30
   brakeAcceleration: 50
@@ -699,15 +698,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: aa35326e084c5774b9fea1733afca70f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2d997c6d92b71154e8dee74617594aea, type: 2}
     - target: {fileID: 919132149155446097, guid: aa35326e084c5774b9fea1733afca70f,
         type: 3}
       propertyPath: m_Name
       value: Parking_Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa35326e084c5774b9fea1733afca70f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aa35326e084c5774b9fea1733afca70f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2080744234}
   m_SourcePrefab: {fileID: 100100000, guid: aa35326e084c5774b9fea1733afca70f, type: 3}
 --- !u!1 &906769023
 GameObject:
@@ -1786,6 +1799,34 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!1 &2080744230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa35326e084c5774b9fea1733afca70f,
+    type: 3}
+  m_PrefabInstance: {fileID: 654366615}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &2080744234
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080744230}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1173203073983562504, guid: aa35326e084c5774b9fea1733afca70f, type: 3}
 --- !u!1 &2084101298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,54 +1978,6 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
---- !u!114 &584255895695082081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8649754178877391252}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0fefceefe666bb4682b272ec8c5bdd0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxSpeed: 90
-  maxReverseSpeed: 45
-  accelerationMultiplier: 2
-  maxSteeringAngle: 27
-  steeringSpeed: 0.5
-  brakeForce: 350
-  decelerationMultiplier: 2
-  handbrakeDriftMultiplier: 5
-  bodyMassCenter: {x: 0, y: 0, z: 0}
-  frontLeftMesh: {fileID: 640672528831588070}
-  frontLeftCollider: {fileID: 0}
-  frontRightMesh: {fileID: 6781701643137252129}
-  frontRightCollider: {fileID: 0}
-  rearLeftMesh: {fileID: 2808134144277452529}
-  rearLeftCollider: {fileID: 0}
-  rearRightMesh: {fileID: 7797831526568297968}
-  rearRightCollider: {fileID: 0}
-  useEffects: 0
-  RLWParticleSystem: {fileID: 0}
-  RRWParticleSystem: {fileID: 0}
-  RLWTireSkid: {fileID: 0}
-  RRWTireSkid: {fileID: 0}
-  useUI: 0
-  carSpeedText: {fileID: 0}
-  useSounds: 0
-  carEngineSound: {fileID: 0}
-  tireScreechSound: {fileID: 0}
-  useTouchControls: 0
-  throttleButton: {fileID: 0}
-  reverseButton: {fileID: 0}
-  turnRightButton: {fileID: 0}
-  turnLeftButton: {fileID: 0}
-  handbrakeButton: {fileID: 0}
-  carSpeed: 0
-  isDrifting: 0
-  isTractionLocked: 0
 --- !u!1 &640672528831588070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2187,12 +2180,13 @@ Transform:
   m_GameObject: {fileID: 8942630931197745325}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 281895436}
   - {fileID: 19406112}
+  - {fileID: 244887443}
   m_Father: {fileID: 8305140414915042094}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5615829765819612646
@@ -2386,7 +2380,7 @@ Transform:
   m_GameObject: {fileID: 8649754178877391252}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.541389, y: 0.4, z: -8.975197}
+  m_LocalPosition: {x: 5.541389, y: 8.2, z: 133.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2410,7 +2404,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8305140414915042094}
-  - component: {fileID: 584255895695082081}
   - component: {fileID: 8649754178877391254}
   - component: {fileID: 8649754178877391253}
   - component: {fileID: 8649754178877391255}
@@ -2433,7 +2426,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e085d4d90b8a5fd4d8529ba5d8a95610, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundedBox: {fileID: 0}
   jumpSTR: 10000
   maxAcceleration: 30
   brakeAcceleration: 50
@@ -2552,4 +2544,3 @@ SceneRoots:
   - {fileID: 286490794}
   - {fileID: 654366615}
   - {fileID: 8305140414915042094}
-  - {fileID: 244887443}
