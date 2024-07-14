@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RollOverHitbox
   - Floor
+  - car
   layers:
   - Default
   - TransparentFX
