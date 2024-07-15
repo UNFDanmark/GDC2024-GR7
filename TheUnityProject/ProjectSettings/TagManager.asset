@@ -7,6 +7,9 @@ TagManager:
   - RollOverHitbox
   - Floor
   - car
+  - frontHitbox
+  - car1
+  - car2
   layers:
   - Default
   - TransparentFX

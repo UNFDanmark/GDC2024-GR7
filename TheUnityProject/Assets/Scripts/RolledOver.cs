@@ -39,7 +39,7 @@ public class RolledOver : MonoBehaviour
         if (Vector3.Dot(Vector3.up, carRotate.up) < 0.5)
         {
             timerLeft = timerLeft - Time.deltaTime;
-            print(timerLeft);
+            //print(timerLeft);
             if (timerLeft <= 0)
             {
                 float vinkel = Mathf.Acos(Vector3.Dot(Vector3.up, carRotate.up));
