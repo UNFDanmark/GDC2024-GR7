@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RollOverHitbox
+  - Floor
+  - car
+  - frontHitbox
+  - car1
+  - car2
   layers:
   - Default
   - TransparentFX
