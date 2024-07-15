@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class CarController : MonoBehaviour
         public Axel axel; 
     }
 
-   
+    public Text player1Score;
     
     public float jumpSTR = 100000f;
     
@@ -41,7 +42,8 @@ public class CarController : MonoBehaviour
     void Start()
     {
         carRB = GetComponent<Rigidbody>();
-        
+        player1Score.text = "" + deathplane.instance.ScoreP1;
+
     }
 
     void Update()
@@ -98,4 +100,6 @@ public class CarController : MonoBehaviour
             isgrounded = true;
         }
     }
+    
+    
 }
