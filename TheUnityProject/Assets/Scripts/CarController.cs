@@ -31,9 +31,7 @@ public class CarController : MonoBehaviour
 
     public float turnSensitivity = 1.0f;
     public float maxSteeringAngle = 30.0f;
-
     public List<Wheel> wheels;
-
     float moveInput;
     float steerInput; 
     bool isgrounded = true;
@@ -42,9 +40,12 @@ public class CarController : MonoBehaviour
     void Start()
     {
         carRB = GetComponent<Rigidbody>();
+        
         player1Score.text = "" + deathplane.instance.ScoreP1;
+        carRB.constraints = RigidbodyConstraints.FreezeAll;
 
     }
+    
 
     void Update()
     {
@@ -54,7 +55,12 @@ public class CarController : MonoBehaviour
             carRB.AddForce(new Vector3(0, jumpSTR, 0), ForceMode.Impulse);
             Debug.Log("Itsa me mario");
         }
-        GetInputs();    
+        GetInputs();
+        if (Camera.main.fieldOfView == 60)
+        {
+            carRB.constraints = RigidbodyConstraints.None;
+            
+        }
     }
 
     void LateUpdate()

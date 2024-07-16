@@ -35,11 +35,11 @@ public class CarControllerPlayer2 : MonoBehaviour
     float steerInput; 
     bool isgrounded = true;
     public Rigidbody carRB;
-
     void Start()
     {
         carRB = GetComponent<Rigidbody>();
         ScoreText.text = "" + deathplane.instance.ScoreP2;
+        carRB.constraints = RigidbodyConstraints.FreezeAll;
 
     }
 
@@ -51,7 +51,12 @@ public class CarControllerPlayer2 : MonoBehaviour
             carRB.AddForce(new Vector3(0, jumpSTR, 0), ForceMode.Impulse);
             Debug.Log("Itsa me mario");
         }
-        GetInputs();    
+        GetInputs();
+        if (Camera.main.fieldOfView == 60)
+        {
+            carRB.constraints = RigidbodyConstraints.None;
+        }
+        
     }
 
     void LateUpdate()
