@@ -101,10 +101,10 @@ public class deathplane : MonoBehaviour
 
         Camera.main.fieldOfView = Mathf.MoveTowards(Camera.main.fieldOfView, targetFov, Time.deltaTime * zoomSpeed);
         //if (Rounds <= 0 && Input.GetKeyDown(KeyCode.Escape))
-       // {
-            //SceneManager.LoadScene("Menu");
+        // {
+        //SceneManager.LoadScene("Menu");
         //}
-       
+
 
     }
 
