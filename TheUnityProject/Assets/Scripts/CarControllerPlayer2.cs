@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using UnityEditor.ShaderGraph.Drawing.Inspector.PropertyDrawers;
 using UnityEngine;
-using UnityEngine.Rendering;
-
+using UnityEngine.UI;
 public class CarControllerPlayer2 : MonoBehaviour
 {
     public enum Axel
@@ -33,6 +29,8 @@ public class CarControllerPlayer2 : MonoBehaviour
 
     public List<Wheel> wheels;
 
+    public Text ScoreText;
+    
     float moveInput;
     float steerInput; 
     bool isgrounded = true;
@@ -41,7 +39,8 @@ public class CarControllerPlayer2 : MonoBehaviour
     void Start()
     {
         carRB = GetComponent<Rigidbody>();
-        
+        ScoreText.text = "" + deathplane.instance.ScoreP2;
+
     }
 
     void Update()
