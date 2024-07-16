@@ -22,6 +22,7 @@ public class deathplane : MonoBehaviour
     // Start is called before the first frame updates
     void Start()
     {
+        
         Rounds = 3;
         if (instance == null)
         {
@@ -32,17 +33,14 @@ public class deathplane : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
         ScoreP1 = 0;
         ScoreP2 = 0;
         P1Win = false;
         P2Win = false;
         roundStartTimer = 1.5f;
-
-
+        Camera.main.enabled = true;
     }
-
-    // Update is called once per frame
+// Update is called once per frame
     void Update()
     {
         if (Camera.main.fieldOfView == 60)
@@ -91,11 +89,13 @@ public class deathplane : MonoBehaviour
             {
                 P2Win = true;
                 print("deathplane win2");
+                Camera.main.enabled = false;
             }
             else
             {
                 P1Win = true;
                 print("deathplane win1");
+                Camera.main.enabled = false;
             }
         }
 
