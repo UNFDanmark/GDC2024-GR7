@@ -5,6 +5,8 @@ using UnityEngine;
 public class CamScriptP2Win : MonoBehaviour
 {
     public Camera P2winCam;
+
+    private bool winMusicStarted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,8 +18,19 @@ public class CamScriptP2Win : MonoBehaviour
     {
         if (deathplane.instance.P2Win == true)
         {
+            if (winMusicStarted == false)
+            {
+                GameObject.FindWithTag("BattleMusic").GetComponent<AudioSource>().Stop();
+                GameObject.FindWithTag("WinMusic").GetComponent<AudioSource>().Play();
+                GameObject.FindWithTag("P2Win").GetComponent<AudioSource>().Play();
+                winMusicStarted = true;
+            }
             P2winCam.enabled = true;
-            Camera.main.enabled = false;
+            if (Camera.main != null)
+            {
+                Camera.main.enabled = false;
+            }
         }
+        
     }
 }

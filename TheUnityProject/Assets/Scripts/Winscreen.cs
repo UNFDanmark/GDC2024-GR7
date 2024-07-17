@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Winscreen : MonoBehaviour
 {
@@ -26,5 +27,15 @@ public class Winscreen : MonoBehaviour
             P2Winscreen.SetActive(P2Winscreen);
             print("p2win");
         }
-    }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Camera.main != null)
+            {
+                Camera.main.enabled = true;
+                
+            }
+            SceneManager.LoadScene("Menu");
+        }
+    } 
 }

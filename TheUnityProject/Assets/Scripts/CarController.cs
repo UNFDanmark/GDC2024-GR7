@@ -42,7 +42,7 @@ public class CarController : MonoBehaviour
         carRB = GetComponent<Rigidbody>();
         
         player1Score.text = "" + deathplane.instance.ScoreP1;
-        carRB.constraints = RigidbodyConstraints.FreezeAll;
+        //carRB.constraints = RigidbodyConstraints.FreezeAll;
 
     }
     
@@ -56,7 +56,7 @@ public class CarController : MonoBehaviour
             Debug.Log("Itsa me mario");
         }
         GetInputs();
-        if (Camera.main.fieldOfView == 60 && deathplane.instance.roundStartTimer <= 0)
+       /* if (Camera.main.fieldOfView == 60 && deathplane.instance.roundStartTimer <= 0)
         {
             carRB.constraints = RigidbodyConstraints.None;
             
@@ -65,7 +65,7 @@ public class CarController : MonoBehaviour
         if (deathplane.instance.P1Win)
         {
             carRB.constraints = RigidbodyConstraints.None;
-        }
+        }*/
     }
 
     void LateUpdate()
@@ -100,7 +100,17 @@ public class CarController : MonoBehaviour
                 steeringAngle = Mathf.Lerp(wheel.WheelCollider.steerAngle, steeringAngle, 0.9f);
                 wheel.WheelCollider.steerAngle = steeringAngle;
             }
+
+            // if (moveInput < 0)
+            //{
+            //  wheel.WheelCollider.brakeTorque = Mathf.Abs(moveInput) * brakeAcceleration;
+            //}
+            //else
+            //{
+            //  wheel.WheelCollider.brakeTorque = 0;
+            //}
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -111,6 +121,6 @@ public class CarController : MonoBehaviour
             isgrounded = true;
         }
     }
-    
-    
+
+   
 }

@@ -10,6 +10,16 @@ TagManager:
   - frontHitbox
   - car1
   - car2
+  - Round1Splash
+  - Sound3Splash
+  - Round2Splash
+  - AudioRound1
+  - AudioRound2
+  - AudioRound3
+  - BattleMusic
+  - P1Win
+  - P2Win
+  - WinMusic
   layers:
   - Default
   - TransparentFX
