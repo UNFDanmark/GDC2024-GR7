@@ -56,10 +56,15 @@ public class CarController : MonoBehaviour
             Debug.Log("Itsa me mario");
         }
         GetInputs();
-        if (Camera.main.fieldOfView == 60)
+        if (Camera.main.fieldOfView == 60 && deathplane.instance.roundStartTimer <= 0)
         {
             carRB.constraints = RigidbodyConstraints.None;
             
+        }
+
+        if (deathplane.instance.P1Win)
+        {
+            carRB.constraints = RigidbodyConstraints.None;
         }
     }
 
