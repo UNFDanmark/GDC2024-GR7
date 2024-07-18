@@ -148,7 +148,7 @@ public class deathplane : MonoBehaviour
             Debug.Log("Score P2");
             ScoreP2 = ScoreP2 + 1;
             Rounds = Rounds - 1;
-            SceneManager.LoadScene("Sumo minigame");
+            SceneManager.LoadScene("Real Sumo");
 
         }
 
@@ -157,7 +157,7 @@ public class deathplane : MonoBehaviour
             Debug.Log("Score P1");
             ScoreP1 = ScoreP1 + 1;
             Rounds = Rounds - 1;
-            SceneManager.LoadScene("Sumo minigame");
+            SceneManager.LoadScene("Real Sumo");
         }
     }
 }
