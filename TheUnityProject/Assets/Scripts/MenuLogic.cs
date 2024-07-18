@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class MenuLogic : MonoBehaviour
 {
@@ -20,7 +17,11 @@ public class MenuLogic : MonoBehaviour
             //GameObject.FindWithTag("WinMusic").GetComponent<AudioSource>().Stop();
             //GameObject.FindWithTag("P1Win").GetComponent<AudioSource>().Stop();
         }
-       
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
         
     
